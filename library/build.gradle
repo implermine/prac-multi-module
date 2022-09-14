@@ -1,5 +1,6 @@
 plugins{
-    id 'org.springframework.boot' version '2.7.1' apply false
+//    id 'org.springframework.boot' version '2.7.1' apply false
+    id 'org.springframework.boot' version '2.7.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -12,14 +13,22 @@ repositories {
     mavenCentral()
 }
 
-dependencyManagement{
-    imports{
-        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
-    }
-}
+//dependencyManagement{
+//    imports{
+//        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+//    }
+//}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+bootJar{
+    enabled = false
+}
+
+jar {
+    enabled = true
 }
 
